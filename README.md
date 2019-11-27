@@ -20,8 +20,9 @@ The goal was to understand the usage of Docker and Docker-Compose.
 ## 4. How to collaborate ?
 You can pull request the project. ;)
 
-## 5. Collaborator
+## 5. Collaborators
 - Nassim Koceir (Founder)
 - Marvin Louis (Coach / Teacher / Debugger / Tech Support)
-- Laly Singh (Beta-Tester)
+- Octavia Couneson (Translator)
+- Laly Singh (Beta-Tester / Translatore)
 - Gregoire Wastelain (Beta-Tester)
