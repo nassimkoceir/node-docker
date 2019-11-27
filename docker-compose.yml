@@ -16,10 +16,10 @@ services:
             - 80:8080
         # Restart the container when turning on computer
         restart: always
-        # Link the local working directory with the working directory in the container (./LOCAL DIRECTORY:/CONTAINER DIRECTORY) /!\ CHANGE ./application/DIRECTORY where DIRECTORY is the name of your github repository
+        # Mount a volume from your local machine to the docker (./LOCALDIRECTORY:/CONTAINER DIRECTORY) /!\ CHANGE ./application/DIRECTORY 
         volumes:
             - ./application/DIRECTORY:/node/app
-        # Set the network which docker containers will use to work together
+        # Set the network your containers will use to work together
         networks:
             - node
 
@@ -34,13 +34,13 @@ services:
             - 27017:27017
         # Restart the service at boot
         restart: always
-        # Link the local Docker volume with the default database directory in the container (Docker Volume:/DB IN CONTAINER DIRECTORY)
+        # Create a docker volume within the default database directory in the container (Docker Volume:/DB IN CONTAINER DIRECTORY)
         volumes:
             - timon:/data/db
-        # Connection information to the database
+        # Environment variables to enable connection to the database
         env_file:
             - ./docker.env
-        # Set the network which docker containers will use to work together
+        # Set the network your containers will use to work together
         networks:
             - node
 
@@ -55,7 +55,7 @@ services:
             - 8081:8081
         # Restart the service at boot
         restart: always
-        # Connection information to mongo-express
+        # Environment variables for connection to mongo-express
         env_file:
             - ./docker.env
         # Starting the service depends on the starting of another service
