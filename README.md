@@ -6,7 +6,7 @@ Use this for development purpose only. It's not safe to use this on production
 ## 1. How to use this ?
 - Clone your GitHub repository in the "application" directory
 - Change the name of the directory in the "docker-compose.yml" (in the root) AND in the Dockerfile (in the "application" directory")
-- Copy/Paste the "package.json" and the "app.js" from DIRECTORY in your GitHub repository
+- Copy/Paste the "package.json", the "app.js" and the ".gitignore" from _DIRECTORY_ in your GitHub repository
 - Enjoy
 
 ## 2. What was the project ?
