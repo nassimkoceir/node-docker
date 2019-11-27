@@ -21,17 +21,20 @@ to the Dockerfile. If you pasted your files directly into the "application"
 folder, just write  `.`. 
 - Copy/Paste the "package.json", the "app.js" and the ".gitignore" from _DIRECTORY_ at the root of your code, unless you already have yours. The app.js is the serverside node.js code. You cannot rename this file, unless you enter the node container, stop and restart nodemon.
 - Type the following command to start the docker: 
-```sudo docker-compose up 
+```
+sudo docker-compose up 
 ```
 This will give you the full output of the errors and occupy a terminal window. 
 - Alternatively, use:
-```sudo docker-compose up -d
+```
+sudo docker-compose up -d
 ```
 This will liberate your terminal window after starting the containers but will not give you a good look at possible errors.
 
 - Add the dependencies you need in the package.json, enter the container and install them.
 
 *Note*
+
 This container comes with no node modules pre-installed. If/when you need them,
 enter node docker container and install as needed. You only need to do this once.
 
