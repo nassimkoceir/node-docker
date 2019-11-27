@@ -1,0 +1,72 @@
+# Third version of Docker Compose language
+version: '3'
+
+# Lists services which we need
+services:
+    # NodeJS
+    nodejs:
+        # Build the image
+        build:
+            # Path to Dockerfile
+            context: ./application
+        # Define container name
+        container_name: nodejs-service
+        # Set the localhost port:container port
+        ports:
+            - 80:8080
+        # Restart the container when turning on computer
+        restart: always
+        # Link the local working directory with the working directory in the container (./LOCAL DIRECTORY:/CONTAINER DIRECTORY) /!\ CHANGE ./application/DIRECTORY where DIRECTORY is the name of your github repository
+        volumes:
+            - ./application/DIRECTORY:/node/app
+        # Set the network which docker containers will use to work together
+        networks:
+            - node
+
+    # MongoDB
+    mongodb:
+        # Download from Docker Hub
+        image: mongo:4.2.1
+        # Define container name
+        container_name: mongodb
+        # Default port for MongoDB
+        ports:
+            - 27017:27017
+        # Restart the service at boot
+        restart: always
+        # Link the local Docker volume with the default database directory in the container (Docker Volume:/DB IN CONTAINER DIRECTORY)
+        volumes:
+            - timon:/data/db
+        # Connection information to the database
+        env_file:
+            - ./docker.env
+        # Set the network which docker containers will use to work together
+        networks:
+            - node
+
+    # Mongo Express : PHPmyAdmin-like for MONGODB
+    mongo-admin:
+        # Download from Docker Hub
+        image: mongo-express
+        # Define container name
+        container_name: mongo-admin
+        # Set the ports used to communicate between host and container
+        ports:
+            - 8081:8081
+        # Restart the service at boot
+        restart: always
+        # Connection information to mongo-express
+        env_file:
+            - ./docker.env
+        # Starting the service depends on the starting of another service
+        depends_on:
+            - mongodb
+        # Set the network which docker containers will use to work together
+        networks:
+            - node
+
+networks:
+    node:
+
+volumes:
+    timon:

@@ -1,0 +1,17 @@
+{
+	"name": "project-name",
+	"description": "Project Description",
+	"repository": {
+		"type" : "git",
+		"url" : "url-to-yout-github-repo"
+	},
+	"homepage": "url-to-the-project-homepage",
+	"author": "Your Name <your@e-mail.com>",
+	"main": "app.js",
+	"license": "THE LICENSE",
+	"scripts": {
+		"start": "node ."
+	},
+	"dependencies": {
+	}
+}
