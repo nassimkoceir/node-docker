@@ -52,6 +52,6 @@ You can pull request the project. ;)
 ## 5. Collaborators
 - Nassim Koceir (Founder)
 - Marvin Louis (Coach / Teacher / Debugger / Tech Support)
-- Octavia Couneson (Translator / Debugger)
+- Octavia Couneson (Translator / Debugger / README & Comments master)
 - Laly Singh (Beta-Tester / Translator)
 - Gregoire Wastelain (Beta-Tester)
